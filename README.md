@@ -1,2 +1,2 @@
 # public-chat
-Post comments to a public page with nodejs
+Post comments to a public page with nodejs (test project)
