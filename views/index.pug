@@ -1,12 +1,19 @@
 extends layout
 
 block content
-  form(method="post")
-    input(type='text' name='name' placeholder='Name')
-    input(type='text' name='message' placeholder='Please leave a message...')
-    input(type='submit' value='submit')
-  ul
-    each message, index in messages
-      p= message.name
-      p= message.message
-      p= message.time
+  div(class="container")
+    h1 Public Chat
+      
+    form(method="post")
+      input(class="text" type='text' name='name' placeholder='Name')
+      textarea(maxlength="500" class="text" type='text' name='message' placeholder='Please leave a message...')
+      input(class="button" type='submit' value='Submit')
+      - for(var i = messages.length - 1; i > 0; i--) {
+        div(class="message")
+          div(class="header")
+            p(class="name")= messages[i].name + " says..."
+            p(class="time")= messages[i].time
+          p(class="content")= messages[i].message
+      - }
+
+  include footer.pug
