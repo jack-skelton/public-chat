@@ -25,6 +25,8 @@ router.post('/', function(req, res, next) {
       connection.end();
       next();
     });
+  } else {
+    next();
   }
 });
 
